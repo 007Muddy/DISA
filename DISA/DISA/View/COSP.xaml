@@ -1,0 +1,32 @@
+﻿<Window x:Class="DISA.View.COSP"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DISA.View"
+        mc:Ignorable="d"
+        Title="COSP" Height="450" Width="800">
+    <Grid>
+        <ListView HorizontalAlignment="Left" Height="360" Margin="66,55,0,0" 
+              VerticalAlignment="Top" Width="623" ItemsSource="{Binding COSPVM}">
+            <ListView.View>
+                <GridView x:Name="GridView1">
+                    <GridViewColumn Header="Time Stamp" DisplayMemberBinding= "{Binding Path=TimeStamp}"/>
+                    <GridViewColumn Header="COSP %" DisplayMemberBinding= "{Binding Path=COSP}"/>
+
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <Button Content="Show Average" HorizontalAlignment="Left" Height="27" Margin="101,17,0,0" VerticalAlignment="Top" Width="103"
+                Click="COFinal_Click"
+                />
+        <Button Content="Show Maximum" HorizontalAlignment="Center" Height="27" Margin="0,17,0,0" VerticalAlignment="Top" Width="104"
+                Click="COMaximum"
+                />
+        <Button Content="Show Minimum" HorizontalAlignment="Left" Height="27" Margin="553,17,0,0" VerticalAlignment="Top" Width="103"
+            Click="COMinimum"
+                />
+
+    </Grid>
+</Window>

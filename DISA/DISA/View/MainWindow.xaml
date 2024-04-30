@@ -1,0 +1,29 @@
+﻿<Window x:Class="DISA.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DISA"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="495" Width="795">
+    <Grid Margin="0,0,30,9">
+
+        <ListView HorizontalAlignment="Left" Height="400" Margin="10,55,0,0" 
+              VerticalAlignment="Top" Width="350" ItemsSource="{Binding AnalysesVM}">
+            <ListView.View>
+                <GridView x:Name="GridView1">
+                    <GridViewColumn Header="Time Stamp" DisplayMemberBinding= "{Binding Path=TimeStamp}"/>
+                    <GridViewColumn Header="COSP %" DisplayMemberBinding= "{Binding Path=COSP}"/>
+                    <GridViewColumn Header="CO Final %" DisplayMemberBinding= "{Binding Path=COFinal}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <Button Content="Show COSP" HorizontalAlignment="Left" Height="28" Margin="467,156,0,0" VerticalAlignment="Top" Width="103"
+                Click="COSP_Click"
+                />
+        <Button Content="Show COFinal" HorizontalAlignment="Left" Height="27" Margin="467,235,0,0" VerticalAlignment="Top" Width="103"
+                Click="COFinal_Click" 
+                />
+    </Grid>
+</Window>
